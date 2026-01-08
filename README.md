@@ -1,6 +1,6 @@
 # Playwright로 CAPTCHA 우회하기
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
+[![Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
 이 가이드는 Playwright를 사용해 CAPTCHA를 우회하고 Webスクレイピング 작업이 중단 없이 원활하게 실행되도록 보장하는 방법을 설명합니다:
 
@@ -19,7 +19,7 @@
 
 [CAPTCHA](https://brightdata.co.kr/blog/web-data/what-is-a-captcha)는 “Completely Automated Public Turing tests to tell Computers and Humans Apart”의 약자로, 인간 사용자와 자동화된 봇을 구분하기 위해 사용되는 테스트입니다. 사람은 보통 쉽게 해결할 수 있지만, 기계는 해결하기 어렵도록 설계되었습니다.
 
-![CAPTCHA 예시](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Example-of-a-CAPTCHA.png)
+![CAPTCHA 예시](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/Example-of-a-CAPTCHA.png)
 
 Google reCAPTCHA, hCaptcha, BotDetect는 가장 인기 있는 CAPTCHA 제공업체 중 일부입니다. 이들은 일반적으로 아래 CAPTCHA 유형 중 하나 이상을 지원합니다:
 
@@ -30,13 +30,13 @@ Google reCAPTCHA, hCaptcha, BotDetect는 가장 인기 있는 CAPTCHA 제공업�
 
 CAPTCHA는 폼 제출의 마지막 단계와 같이 특정 사용자 흐름의 일부일 수 있습니다:
 
-![폼 제출 프로세스의 한 단계로서의 CAPTCHA 예시](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/CAPTCHA-as-a-step-of-a-form-submission-process-example.png)
+![폼 제출 프로세스의 한 단계로서의 CAPTCHA 예시](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/CAPTCHA-as-a-step-of-a-form-submission-process-example.png)
 
 이러한 경우 CAPTCHA는 항상 표시되며 봇이 피할 수 없습니다. 그러나 CAPTCHA-solving 라이브러리와 소프트웨어를 통합하여 이를 자동화하거나, 사람 운영자가 실시간으로 이러한 챌린지를 해결하는 서비스에 의존할 수 있습니다.
 
 CAPTCHA는 또한 [web application firewalls](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)와 같은 더 광범위한 アンチボット 솔루션의 일부로도 흔히 사용됩니다:
 
-![Web Application Firewall 예시](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Example-of-a-Web-Application-Firewall-1024x488.png)
+![Web Application Firewall 예시](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/Example-of-a-Web-Application-Firewall-1024x488.png)
 
 이러한 시스템은 사용자가 봇일 가능성이 있다고 의심할 때 동적으로 CAPTCHA를 표시합니다. 이런 상황에서는 봇이 인간 행동을 모방하도록 만들어 CAPTCHA를 우회할 수 있습니다.
 
@@ -64,7 +64,7 @@ npm init -y
 
 선호하는 JavaScript IDE에서 프로젝트 폴더를 열고 새 `script.js` 파일을 추가합니다.
 
-![IDE에서 새 script.js 파일 추가](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Adding-a-new-script.js-file-in-the-IDE.png)
+![IDE에서 새 script.js 파일 추가](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/Adding-a-new-script.js-file-in-the-IDE.png)
 
 `package.json`을 여는 것을 잊지 말고 `"type": "module"`을 추가하여 [프로젝트를 모듈로 표시](https://nodejs.org/api/packages.html#type)합니다.
 
@@ -170,7 +170,7 @@ node script.js
 
 스크립트는 headless 모드에서 Chromium 인스턴스를 열고, 원하는 페이지에 방문해 스크린샷을 찍은 뒤 브라우저를 종료합니다. 스크립트 실행이 끝나면 프로젝트 루트 폴더에 나타나는 `results.png` 파일을 열어 보면 다음과 같은 화면이 표시됩니다:
 
-![results.png 파일 예시](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/results.png-file-example-196x1024.png)
+![results.png 파일 예시](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/results.png-file-example-196x1024.png)
 
 headless 모드의 기본 Playwright는 여러 테스트를 통과하지 못합니다. 이를 해결하려면 Stealth 플러그인을 사용합니다.
 
@@ -252,7 +252,7 @@ node script.js
 
 `results.png`를 다시 열어 보면, 이제 모든 봇 탐지 테스트가 통과된 것을 확인할 수 있습니다:
 
-![results.png 파일 두 번째 예시 - 봇 탐지 테스트 통과](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/results.png-file-second-example-bot-detection-tests-passed-229x1024.png)
+![results.png 파일 두 번째 예시 - 봇 탐지 테스트 통과](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/results.png-file-second-example-bot-detection-tests-passed-229x1024.png)
 
 ## What If the Playwright CAPTCHA Solver Solution Does Not Work?
 
