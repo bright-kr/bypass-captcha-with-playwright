@@ -2,7 +2,7 @@
 
 [![Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
-이 가이드는 Playwright를 사용해 CAPTCHA를 우회하고 Webスクレイピング 작업이 중단 없이 원활하게 실행되도록 보장하는 방법을 설명합니다:
+이 가이드는 Playwright를 사용해 CAPTCHA를 우회하고 Web스크레이핑 작업이 중단 없이 원활하게 실행되도록 보장하는 방법을 설명합니다:
 
 - [CAPTCHA란 무엇이며 우회할 수 있습니까?](#what-are-captchas-and-can-you-bypass-them)
 - [Playwright로 CAPTCHA 우회: 단계별 튜토리얼](#playwright-bypass-captcha-step-by-step-tutorial)
@@ -34,7 +34,7 @@ CAPTCHA는 폼 제출의 마지막 단계와 같이 특정 사용자 흐름의 �
 
 이러한 경우 CAPTCHA는 항상 표시되며 봇이 피할 수 없습니다. 그러나 CAPTCHA-solving 라이브러리와 소프트웨어를 통합하여 이를 자동화하거나, 사람 운영자가 실시간으로 이러한 챌린지를 해결하는 서비스에 의존할 수 있습니다.
 
-CAPTCHA는 또한 [web application firewalls](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)와 같은 더 광범위한 アンチボット 솔루션의 일부로도 흔히 사용됩니다:
+CAPTCHA는 또한 [web application firewalls](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)와 같은 더 광범위한 안티봇 솔루션의 일부로도 흔히 사용됩니다:
 
 ![Web Application Firewall 예시](https://github.com/bright-kr/bypass-captcha-with-playwright/blob/main/images/Example-of-a-Web-Application-Firewall-1024x488.png)
 
@@ -48,7 +48,7 @@ CAPTCHA를 피하기 위한 효율적인 접근법은, 인간과 유사한 브�
 
 ### Step #1: Initialize Your Node.js Project
 
-이미 Playwright Webスクレイピング 또는 테스트 스크립트가 있다면 이 단계는 건너뛰어도 됩니다. 그렇지 않다면, Playwright CAPTCHA solver 프로젝트용 폴더를 만들고 터미널에서 해당 폴더로 이동합니다:
+이미 Playwright Web스크레이핑 또는 테스트 스크립트가 있다면 이 단계는 건너뛰어도 됩니다. 그렇지 않다면, Playwright CAPTCHA solver 프로젝트용 폴더를 만들고 터미널에서 해당 폴더로 이동합니다:
 
 ```bash
 mkdir playwright_demo
@@ -256,7 +256,7 @@ node script.js
 
 ## What If the Playwright CAPTCHA Solver Solution Does Not Work?
 
-アンチボット 도구가 주목하는 대상은 브라우저 설정만이 아닙니다. IP 평판은 또 다른 핵심 요소이며, 무료 라이브러리는 이 부분에 도움이 되지 않습니다.
+안티봇 도구가 주목하는 대상은 브라우저 설정만이 아닙니다. IP 평판은 또 다른 핵심 요소이며, 무료 라이브러리는 이 부분에 도움이 되지 않습니다.
 
 한 번의 클릭만 필요한 단순한 CAPTCHA의 경우 [`puppeteer-extra-plugin-recaptcha`](https://github.com/berstend/puppeteer-extra/tree/39248f1f5deeb21b1e7eb6ae07b8ef73f1231ab9/packages/puppeteer-extra-plugin-recaptcha) 플러그인을 사용할 수 있습니다. 하지만 Cloudflare처럼 더 복잡한 도구를 다루는 경우에는 더 강력한 솔루션이 필요합니다.
 
